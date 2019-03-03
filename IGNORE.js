@@ -8,7 +8,7 @@ let schema = {
       data: [
         { active: false, blabla: []},
         { active: false, blabla: []},
-        { active: true /*change to false*/, blabla: [/* add item here*/]}
+        { active: true /*chasnge to false*/, blabla: [/* add item here*/]}
       ]
     }
   ]
