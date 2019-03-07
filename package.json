@@ -1,10 +1,11 @@
 {
-  "name": "mern-mongodb-login--reg",
+  "name": "asmile",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "heroku-postbuild" : "NPM_CONFIG_PRODUCTION=false npm insstall --prefix client && npm run build --prefix client"
   },
   "author": "",
   "license": "ISC",
