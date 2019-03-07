@@ -27,7 +27,7 @@ app.use('/users', Users)
 app.use('/teachers', Teachers)
 app.use('/courses', Courses)
 
-// serve statuc assets
+// serve statuc assetss
 if( process.env.NODE_ENV ==="production" ) {
     // set static folder
     app.use( express.static('client/build'))
