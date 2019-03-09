@@ -3,7 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import React , { Component } from 'react'
 import jwt_decode from 'jwt-decode'
 
-import { TextField, Grid, Button, Dialog, DialogTitle,DialogContent, DialogContentText } from '@material-ui/core'
+import {Typography, TextField, Grid, Button, Dialog, DialogTitle,DialogContent, DialogContentText } from '@material-ui/core'
 import { register_user } from './UserFunctions'
 
 const styles = theme => ({
@@ -78,12 +78,16 @@ class RegisterUser extends Component {
           </DialogContent>
         </Dialog>
         <Grid
-          
           container
           direction="column"
-          justify="center"
-          alignItems="center"
+          justify="space-between"
+          alignItems="stretch"
         >
+          < Grid item>
+            <Typography component="div" style={{ padding: 8 * 3 }}>
+              Register the user
+            </Typography>
+          </Grid>
           <Grid item >
             <TextField
               fullWidth

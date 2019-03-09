@@ -105,10 +105,10 @@ class CourseContainer2 extends Component {
         {(this.state.course_result) ? 
           
           <div>
-            {this.state.course_result.data.reverse().map( course => {
+            {this.state.course_result.data.reverse().map( (course, i) => {
               return (
                 <div>
-                  <CourseGraph course={course} />
+                  <CourseGraph key={i} course={course} />
                   
                 </div>
               )
@@ -275,12 +275,18 @@ class EditCourseContainer extends Component {
     const { courses } = this.state
     return(
       <div>
+        
         <Grid
           container
           direction="column"
-          justify="center"
+          justify="space-between"
           alignItems="center"
         >
+        <Grid item>
+            <Typography component="div" style={{ padding: 8 * 3 }}>
+              Select a course to attach to a user
+            </Typography>
+          </Grid>
           <Grid 
             item
           >

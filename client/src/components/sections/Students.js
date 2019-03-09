@@ -2,7 +2,7 @@ import React, {
   Component
 } from 'react'
 import jwt_decode from 'jwt-decode'
-import {Paper, Button, List, ListItem, ListItemText, ListItemSecondaryAction} from '@material-ui/core'
+import {Typography,Grid, Paper, Button, List, ListItem, ListItemText, ListItemSecondaryAction} from '@material-ui/core'
 // import {DeleteIcon, IconButton} from '@material-ui/icons/';
 import RegisterUser from '../RegisterUser'
 import SelectedUser from './SelectedUser'
@@ -59,7 +59,7 @@ class Students extends Component {
                 <ListItem onClick={event => this.handleListItemClick(event, element)} button key={i}>
                     <ListItemText
                       primary={`Username: ${element.username}`}
-                      secondary={true ? 'Secondary text' : null}
+                      secondary={`Account type: ${element.accountType}`}
                     />
                     <ListItemSecondaryAction>
                       {/* <IconButton aria-label="Delete">
@@ -73,7 +73,7 @@ class Students extends Component {
           </div>
           <div className="col-sm-8">
             <Paper>
-{this.state.selected === 'register' ? <RegisterUser /> : (!this.state.selected) ? 'escape' : <SelectedUser teacher={this.state.teacher} user={this.state.selected} />}
+{this.state.selected === 'register' ? <RegisterUser /> : (!this.state.selected) ? <SelectAction /> : <SelectedUser teacher={this.state.teacher} user={this.state.selected} />}
 
             </Paper>
             
@@ -83,5 +83,25 @@ class Students extends Component {
     )
   }
 }
+class SelectAction extends Component {
 
+  render(){
+    return(
+      <div>
+        <Grid
+          container
+          direction="column"
+          justify="space-between"
+          alignItems="center"
+        >
+          <Grid item>
+            <Typography component="div" style={{ padding: 8 * 3 }}>
+              Select activity on the left panel
+            </Typography>
+          </Grid>
+        </Grid>
+      </div>
+    )
+  }
+}
 export default Students

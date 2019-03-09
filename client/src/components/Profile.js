@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import jwt_decode from 'jwt-decode'
 import Students from './sections/Students'
 import { get_profile } from './UserFunctions'
+import  { Redirect } from 'react-router-dom'
 
 class Profile extends Component {
     constructor() {
@@ -18,15 +19,10 @@ class Profile extends Component {
         console.log( decoded.user.username )
         get_profile(decoded.user.username).then(res => {
           if (res) {
-            console.log(res)
+            // return <Redirect to='/profile'  />
               
           }
         })
-
-        // this.setState({
-        //     accountType: decoded.user.accountType,
-        //     username: decoded.user.username
-        // })
     }
 
     render () {
@@ -54,5 +50,7 @@ class Profile extends Component {
         )
     }
 }
+
+
 
 export default Profile

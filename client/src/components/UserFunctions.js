@@ -30,7 +30,7 @@ export const login = user => {
 export const get_profile = username => {
     
     return axios
-        .post('http://localhost:5000/users/profile', {
+        .post('users/profile', {
             username : username,
         })
         .then(res => {
@@ -57,7 +57,7 @@ export const register_user = newUser => {
 }
 export const attach_course = newCourse => {
     return axios
-        .post('http://localhost:5000/courses/assign', {
+        .post('courses/assign', {
             username: newCourse.username,
             courseName: newCourse.courseName,
             assignersName: newCourse.assignersName,
